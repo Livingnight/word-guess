@@ -4,13 +4,13 @@ var Letter = function (
     this.letter = letter;
     this.guessed = false;
     this.checkLetter = function (letterGuess) {
-        if (letterGuess === this.letter) {
+        if (letterGuess === this.letter.toLowerCase() || letterGuess === this.letter.toUpperCase()) {
             this.guessed = true;
         }
     };
     this.showFunc = function () {
         if (this.guessed === false) {
-            return "_";
+            return "__";
         } else {
             return this.letter + '';
         }
@@ -21,9 +21,9 @@ var Letter = function (
 
 // var newLetter = new Letter('a');
 // console.log(newLetter);
-// console.log(newLetter.show());
+// console.log(newLetter.showFunc());
 // newLetter.checkLetter(process.argv[2]);
 // console.log(newLetter.guessed);
-// console.log(newLetter.show());
+// console.log(newLetter.showFunc());
 
 module.exports = Letter;
