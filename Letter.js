@@ -6,12 +6,15 @@ var Letter = function (
     this.checkLetter = function (letterGuess) {
         if (letterGuess === this.letter.toLowerCase() || letterGuess === this.letter.toUpperCase()) {
             this.guessed = true;
+            // console.log('You guessed right! Keep Guessing!');
         }
     };
     this.showFunc = function () {
-        if (this.guessed === false) {
+        if(this.letter === " "){
+            return " ";
+        }else if (this.guessed === false) {
             return "__";
-        } else {
+        }else {
             return this.letter + '';
         }
     };
